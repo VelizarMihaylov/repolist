@@ -1,0 +1,31 @@
+import React from 'react';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
+import { ThemeProvider } from 'styled-components';
+import { BrowserRouter as Router } from 'react-router-dom';
+import generateTheme from 'theme';
+import {{pascalCase ComponentName}} from '../';
+import { _default } from '../{{pascalCase ComponentName}}.stories';
+
+describe('{{pascalCase ComponentName}}', () => {
+  const theme = generateTheme();
+  const props = _default.args;
+
+  const { baseElement, container } = render(
+    <Router>
+      <ThemeProvider theme={theme}>
+        <{{pascalCase ComponentName}} {...props} />
+      </ThemeProvider>
+    </Router>
+  );
+
+  test('Component should render without throwing an error', () => {
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  test('Component is accessible', async () => {
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+});
