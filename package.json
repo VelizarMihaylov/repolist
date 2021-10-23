@@ -6,7 +6,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generate": "graphql-codegen",
+    "scaffold": "yarn plop",
+    "storybook": "start-storybook -p 6066"
   },
   "dependencies": {
     "@apollo/client": "^3.4.16",
@@ -34,6 +37,8 @@
     ]
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^2.2.1",
+    "@graphql-codegen/typescript": "^2.2.4",
     "@storybook/addon-controls": "^6.3.12",
     "@storybook/addon-docs": "^6.3.12",
     "@storybook/addon-viewport": "^6.3.12",

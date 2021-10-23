@@ -4,9 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { ApolloProvider } from '@apollo/client';
+import { client } from 'gql-client';
+
+import { ThemeProvider } from 'styled-components';
+import theme from 'theme';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </ApolloProvider>
+    ,
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -11,6 +11,8 @@ module.exports = function (plop) {
           { name: 'Atom', value: 'atoms' },
           { name: 'Molecule', value: 'molecules' },
           { name: 'Organism', value: 'organisms' },
+          { name: 'Template', value: 'template' },
+          { name: 'Page', value: 'page' },
         ],
       },
       {
@@ -27,7 +29,7 @@ module.exports = function (plop) {
       },
       {
         type: 'add',
-        path: 'src/components/{{type}}/{{kebabCase ComponentName}}/{{pascalCase ComponentName}}.stories.tsx',
+        path: 'src/components/{{type}}/{{kebabCase ComponentName}}/__stories__/{{pascalCase ComponentName}}.stories.tsx',
         templateFile: 'plop-templates/story.hbs',
       },
       {

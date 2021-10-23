@@ -1,0 +1,45 @@
+import { Typeset, Story } from '@storybook/addon-docs/blocks';
+import Typography from './components/Typography.tsx';
+
+<Meta title="🎨 Design System / Typography" />
+
+# Typography
+Typography is set globaly by the GlobalStyles components.
+By default each text block has 24px bottom margin.
+
+## Font Family
+<Typography type="fontFamily" />
+
+## Headings
+```
+<h1>h1: 42px</h1>
+<h2>h2: 38px</h2>
+<h3>h3: 34px</h3>
+<h4>h4: 28px</h4>
+```
+
+<Typography type="heading" />
+
+## Regural text
+
+```
+<p>Sample text</p>
+<p className="bold">Bold Sample Text</p>
+```
+<Typography />
+
+## Small text
+
+```
+<p className="small-text">Sample small text</p>
+<p className="bold small-text">Sample bold small text</p>
+```
+<Typography type="smallText"/>
+
+## Side note
+
+```
+<p className="side-note">Sample side note</p>
+<p className="bold side-note">Sample side note bold</p>
+```
+<Typography type="sideNote"/>

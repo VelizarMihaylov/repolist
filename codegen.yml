@@ -1,0 +1,5 @@
+schema: ./github-schema.docs.graphql
+generates:
+  ./src/gql-client/types.ts:
+    plugins:
+      - typescript

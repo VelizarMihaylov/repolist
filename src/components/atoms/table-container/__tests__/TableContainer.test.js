@@ -1,16 +1,16 @@
 import { render } from '@testing-library/react';
 
-import {{pascalCase ComponentName}} from '..';
+import TableContainer from '..';
 
 import { ThemeProvider } from 'styled-components';
 import theme from 'theme';
 
-describe('{{pascalCase ComponentName}} Component', () => {
+describe('TableContainer Component', () => {
   it('renders successfully', () => {
     expect(() => {
       render(
         <ThemeProvider theme={theme}>
-          <{{pascalCase ComponentName}}>Test Render</{{pascalCase ComponentName}}>
+          <TableContainer>Test Render</TableContainer>
         </ThemeProvider>
       );
     }).not.toThrow();

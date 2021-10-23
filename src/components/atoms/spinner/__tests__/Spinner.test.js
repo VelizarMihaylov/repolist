@@ -1,16 +1,16 @@
 import { render } from '@testing-library/react';
 
-import {{pascalCase ComponentName}} from '..';
+import Spinner from '..';
 
 import { ThemeProvider } from 'styled-components';
 import theme from 'theme';
 
-describe('{{pascalCase ComponentName}} Component', () => {
+describe('Spinner Component', () => {
   it('renders successfully', () => {
     expect(() => {
       render(
         <ThemeProvider theme={theme}>
-          <{{pascalCase ComponentName}}>Test Render</{{pascalCase ComponentName}}>
+          <Spinner>Test Render</Spinner>
         </ThemeProvider>
       );
     }).not.toThrow();

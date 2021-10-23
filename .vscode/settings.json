@@ -9,6 +9,12 @@
 	"eslint.options": {
 	  "extensinons": [".js", ".jsx"]
 	},
-	"colorize.languages": ["typescript", "javascript", "css", "scss"]
+	"colorize.languages": [
+		"typescript",
+		"javascript",
+		"css",
+		"scss"
+	],
+	"jest.jestCommandLine": "yarn test"
   }
   

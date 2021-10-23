@@ -1,16 +1,17 @@
-import React from 'react'
-import {{pascalCase ComponentName}} from './{{pascalCase ComponentName}}';
+import { Meta, Story } from '@storybook/react';
+
+import {{pascalCase ComponentName}} from '..';
+
+import { {{pascalCase ComponentName}}Props } from '../{{pascalCase ComponentName}}';
 
 export default {
   component: {{pascalCase ComponentName}},
   title: '{{pascalCase ComponentName}}',
-  argTypes: {}
-}
+  argTypes: {},
+} as Meta;
 
-const Template = (args) => {
-  return (
-      <{{pascalCase ComponentName}} {...args} />
-  );
+const Template: Story<{{pascalCase ComponentName}}Props> = (args): React.ReactElement => {
+  return <{{pascalCase ComponentName}} {...args} />;
 };
 
 export const _default = Template.bind({});
