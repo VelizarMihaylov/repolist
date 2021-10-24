@@ -1,4 +1,7 @@
-schema: ./github-schema.docs.graphql
+schema:
+  - https://api.github.com/graphql:
+      headers:
+        Authorization: Bearer ${REACT_APP_GRAPHQL_ACCESS_TOKEN}
 generates:
   ./src/gql-client/types.ts:
     plugins:

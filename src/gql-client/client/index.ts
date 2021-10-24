@@ -8,7 +8,7 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      authorization: `Bearer ${process.env.REACT_APP_GRAPHQL_ACCESS_TOKEN}3123`,
+      authorization: `Bearer ${process.env.REACT_APP_GRAPHQL_ACCESS_TOKEN}`,
     },
   };
 });

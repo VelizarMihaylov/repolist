@@ -11,7 +11,7 @@ const StyledTableHeader: React.FC<TableHeaderProps> = styled.thead`
 
   th {
     background-color: ${({ theme }) => theme.colours.swimmersPool}33;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
     line-height: 1;
   }
