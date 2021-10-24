@@ -10,7 +10,7 @@ describe('Spinner Component', () => {
     expect(() => {
       render(
         <ThemeProvider theme={theme}>
-          <Spinner>Test Render</Spinner>
+          <Spinner />
         </ThemeProvider>
       );
     }).not.toThrow();

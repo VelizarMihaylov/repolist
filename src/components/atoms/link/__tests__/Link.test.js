@@ -1,20 +1,16 @@
 import { render } from '@testing-library/react';
 
-import SearchRepositories from '..';
+import Link from '..';
 
 import { ThemeProvider } from 'styled-components';
 import theme from 'theme';
-import { reposMock } from '../__mocks__';
 
-describe('SearchRepositories Component', () => {
+describe('Link Component', () => {
   it('renders successfully', () => {
     expect(() => {
       render(
         <ThemeProvider theme={theme}>
-          <SearchRepositories
-            placeholder="..search"
-            searchResults={reposMock}
-          />
+          <Link href="#">Test Render</Link>
         </ThemeProvider>
       );
     }).not.toThrow();

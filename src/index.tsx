@@ -11,13 +11,16 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'theme';
 
 import GlobalStyles from 'global-styles';
+import ErrorBoundary from 'error-boundary';
 
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <App />
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
       </ThemeProvider>
     </ApolloProvider>
     ,
