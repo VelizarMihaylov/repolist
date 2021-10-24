@@ -21,11 +21,6 @@ const StyledTableContainer: React.FC<TableContainerProps> = styled.table`
     text-align: left;
     vertical-align: top;
 
-    th + th,
-    td + td {
-      border-left: 1px solid ${({ theme }) => theme.colours.crowberryBlue};
-    }
-
     &:first-child {
       border-radius: 5px 0 0 5px;
     }

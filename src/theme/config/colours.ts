@@ -8,4 +8,11 @@ export const colours = {
   crowberryBlue: '#053747',
   swimmersPool: '#22c3bb',
   gallery: '#ececec',
+  redRampage: '#ef3826',
+  button: {
+    primary: {
+      background: '#053747',
+      hover: '#22c3bb',
+    },
+  },
 };

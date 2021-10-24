@@ -25,8 +25,8 @@ const Template: Story<TableContainerProps> = (): React.ReactElement => {
         </TableHeader>
         <TableBody>
           <tr>
-            <th>Column One Content</th>
-            <th>Column Two Content</th>
+            <td>Column One Content</td>
+            <td>Column Two Content</td>
           </tr>
         </TableBody>
       </TableContainer>

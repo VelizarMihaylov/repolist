@@ -6,7 +6,7 @@ import { TableHeaderProps } from '../TableHeader';
 
 export default {
   component: TableHeader,
-  title: 'TableHeader',
+  title: 'Atom/TableHeader',
   argTypes: {},
 } as Meta;
 

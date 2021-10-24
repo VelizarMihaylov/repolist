@@ -9,7 +9,11 @@ export type TableBodyProps = {
 };
 
 const StyledTableBody = styled.tbody`
-  tr:nth-child(2n) td {
+  td {
+    border-left: 1px solid ${({ theme }) => theme.colours.crowberryBlue};
+  }
+
+  tr:nth-child(2n) {
     background: ${({ theme }) => theme.colours.white};
   }
 `;

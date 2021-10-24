@@ -1,32 +1,32 @@
 import { useQuery } from '@apollo/client';
-import gql from 'graphql-tag';
 
 import TableContainer from 'components/atoms/table-container';
 import TableHeader from 'components/atoms/table-header';
 import TableBody from 'components/atoms/table-body';
 import Spinner from 'components/atoms/spinner';
 
+import {
+  SearchResultItemConnection,
+  Repository,
+  QuerySearchArgs,
+  SearchType,
+  SEARCH_REPOSITORIES,
+} from 'gql-client';
+
 const App = () => {
-  const { data, loading, error } = useQuery(gql`
-    query {
-      search(type: REPOSITORY, query: "react", first: 100) {
-        repositoryCount
-        edges {
-          node {
-            ... on Repository {
-              name
-              url
-              stargazers {
-                totalCount
-              }
-              stargazerCount
-              forkCount
-            }
-          }
-        }
-      }
-    }
-  `);
+  const { data, loading, error } = useQuery<
+    {
+      search: SearchResultItemConnection;
+    },
+    QuerySearchArgs
+  >(SEARCH_REPOSITORIES, {
+    variables: {
+      first: 100,
+      query: 'react',
+      type: SearchType.Repository,
+    },
+  });
+
   const searchResults = data?.search?.edges;
   console.log('DATA ', searchResults);
   console.log('LOADING ', loading);
@@ -49,15 +49,16 @@ const App = () => {
         {Array.isArray(searchResults) ? (
           searchResults.length > 0 ? (
             <TableBody>
-              {searchResults.map(
-                ({ node: { id, name, stargazerCount, forkCount } }) => (
-                  <tr key={id}>
-                    <th>{name}</th>
-                    <th>{stargazerCount}</th>
-                    <th>{forkCount}</th>
+              {searchResults.map((item) => {
+                const node = item?.node as Repository;
+                return node ? (
+                  <tr key={node?.id}>
+                    <td>{node.name}</td>
+                    <td>{node.stargazerCount}</td>
+                    <td>{node.forkCount}</td>
                   </tr>
-                )
-              )}
+                ) : null;
+              })}
             </TableBody>
           ) : (
             <h2>No Results Found</h2>

@@ -6,7 +6,7 @@ import { TableBodyProps } from '../TableBody';
 
 export default {
   component: TableBody,
-  title: 'Molecule/TableBody',
+  title: 'Atom/TableBody',
   argTypes: {},
 } as Meta;
 
