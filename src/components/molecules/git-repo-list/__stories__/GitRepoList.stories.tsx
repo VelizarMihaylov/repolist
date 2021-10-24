@@ -8,7 +8,7 @@ import { reposMock } from '../__mocks__';
 
 export default {
   component: GitRepoList,
-  title: 'GitRepoList',
+  title: 'Molecule/GitRepoList',
   argTypes: {},
 } as Meta;
 

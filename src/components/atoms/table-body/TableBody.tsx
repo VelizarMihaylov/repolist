@@ -9,7 +9,7 @@ export type TableBodyProps = {
 };
 
 const StyledTableBody = styled.tbody`
-  td {
+  td + td {
     border-left: 1px solid ${({ theme }) => theme.colours.crowberryBlue};
   }
 

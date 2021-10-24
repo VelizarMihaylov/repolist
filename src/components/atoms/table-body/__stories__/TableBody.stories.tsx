@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 
 import TableBody from '..';
+import TableContainer from 'components/atoms/table-container';
 
 import { TableBodyProps } from '../TableBody';
 
@@ -10,8 +11,17 @@ export default {
   argTypes: {},
 } as Meta;
 
-const Template: Story<TableBodyProps> = (args): React.ReactElement => {
-  return <TableBody {...args} />;
+const Template: Story<TableBodyProps> = (): React.ReactElement => {
+  return (
+    <TableContainer>
+      <TableBody>
+        <tr>
+          <td>Column One</td>
+          <td>Column Two</td>
+        </tr>
+      </TableBody>
+    </TableContainer>
+  );
 };
 
 export const _default = Template.bind({});

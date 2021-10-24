@@ -12,10 +12,12 @@ const GlobalStyles = createGlobalStyle`
         font-size: 80%;
     }
   }
-
-  * {
-    margin: 0;
-    padding: 0;
+  body {
+      background-color: ${({ theme }) => theme.colours.whiteSolid};
+    * {
+      margin: 0;
+      padding: 0;
+    }
   }
 
   h1 {

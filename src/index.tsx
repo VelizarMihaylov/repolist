@@ -10,10 +10,13 @@ import { client } from 'gql-client';
 import { ThemeProvider } from 'styled-components';
 import theme from 'theme';
 
+import GlobalStyles from 'global-styles';
+
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
+        <GlobalStyles />
         <App />
       </ThemeProvider>
     </ApolloProvider>

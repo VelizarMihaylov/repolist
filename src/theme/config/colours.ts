@@ -2,6 +2,7 @@
 
 export const colours = {
   white: '#ffffff',
+  whiteSolid: '#f2f5fa',
   black: '#000000',
   darkToneInk: '#121212',
   charcoalDust: '#595858',

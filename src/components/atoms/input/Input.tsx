@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export type InputProps = {
-  error: boolean;
+  error?: boolean;
 } & React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
