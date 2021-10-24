@@ -32,7 +32,7 @@ const StyledTableContainer: React.FC<TableContainerProps> = styled.table`
 `;
 
 const TableContainer: React.FC<TableContainerProps> = ({ ...props }) => {
-  return <StyledTableContainer {...props} />;
+  return <StyledTableContainer cellSpacing="0" {...props} />;
 };
 
 export default TableContainer;

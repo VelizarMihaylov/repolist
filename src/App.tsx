@@ -1,14 +1,12 @@
 import { useQuery } from '@apollo/client';
 
-import TableContainer from 'components/atoms/table-container';
-import TableHeader from 'components/atoms/table-header';
-import TableBody from 'components/atoms/table-body';
 import Spinner from 'components/atoms/spinner';
+import GitRepoList from 'components/molecules/git-repo-list';
 
 import {
   SearchResultItemConnection,
-  Repository,
   QuerySearchArgs,
+  Repository,
   SearchType,
   SEARCH_REPOSITORIES,
 } from 'gql-client';
@@ -26,9 +24,6 @@ const App = () => {
       type: SearchType.Repository,
     },
   });
-
-  const searchResults = data?.search?.edges;
-  console.log('DATA ', searchResults);
   console.log('LOADING ', loading);
   console.log('ERROR ', error);
 
@@ -36,37 +31,27 @@ const App = () => {
     return <Spinner />;
   }
 
+  const searchResults =
+    data && Array.isArray(data?.search?.edges)
+      ? data.search.edges.map((item) => {
+          const node = item?.node as Repository;
+          return {
+            id: node.id,
+            name: node.name,
+            url: node.url,
+            stargazerCount: node.stargazerCount,
+            forkCount: node.forkCount,
+          };
+        })
+      : [];
+
   return (
     <div>
-      <TableContainer cellSpacing="0">
-        <TableHeader>
-          <tr>
-            <th>Name</th>
-            <th>Stars</th>
-            <th>Forks</th>
-          </tr>
-        </TableHeader>
-        {Array.isArray(searchResults) ? (
-          searchResults.length > 0 ? (
-            <TableBody>
-              {searchResults.map((item) => {
-                const node = item?.node as Repository;
-                return node ? (
-                  <tr key={node?.id}>
-                    <td>{node.name}</td>
-                    <td>{node.stargazerCount}</td>
-                    <td>{node.forkCount}</td>
-                  </tr>
-                ) : null;
-              })}
-            </TableBody>
-          ) : (
-            <h2>No Results Found</h2>
-          )
-        ) : (
-          <h2>Oops something went wrong!</h2>
-        )}
-      </TableContainer>
+      {searchResults.length > 0 ? (
+        <GitRepoList repos={searchResults} />
+      ) : (
+        <h2>No results found</h2>
+      )}
     </div>
   );
 };

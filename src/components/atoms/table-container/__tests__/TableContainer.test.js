@@ -10,7 +10,7 @@ describe('TableContainer Component', () => {
     expect(() => {
       render(
         <ThemeProvider theme={theme}>
-          <TableContainer>Test Render</TableContainer>
+          <TableContainer />
         </ThemeProvider>
       );
     }).not.toThrow();

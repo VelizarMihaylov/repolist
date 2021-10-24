@@ -10,7 +10,14 @@ describe('TableHeader Component', () => {
     expect(() => {
       render(
         <ThemeProvider theme={theme}>
-          <TableHeader>Test Render</TableHeader>
+          <table>
+            <TableHeader>
+              <tr>
+                <th>Column One</th>
+                <th>Column Two</th>
+              </tr>
+            </TableHeader>
+          </table>
         </ThemeProvider>
       );
     }).not.toThrow();
