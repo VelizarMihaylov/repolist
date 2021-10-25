@@ -16,7 +16,7 @@ Before you run the app you will need to make sure that you have the following in
 
 ## Running the app
 
-Before try running the app make sure you have set your GitHub Access token as a global variable (in the .env file for local development). Checkout the [GitHub docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) for more info.
+Before try running the app make sure you have set your GitHub Access token as a global variable (in the .env file for local development, checkout the .env.example file for reference). Checkout the [GitHub docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
 Once you get the access token set:
 
