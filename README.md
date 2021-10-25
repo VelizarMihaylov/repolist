@@ -1,6 +1,8 @@
 # RepoList
 
-A simple app that uses the GitHub [GraphQL API](https://docs.github.com/en/graphql) to list react repositories.
+A simple app that uses the GitHub [GraphQL API](https://docs.github.com/en/graphql) to list react repositories. This app is a simple exercise and should not be run in production.
+
+**Note: your GitHub personal access token will be hardcoded in the app JavaScript bundle so do not host it publicly.!**
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -27,6 +29,27 @@ And start the app:
 ```bash
 yarn start
 ```
+
+## Docker setup
+
+You can run the app with Docker. If you have docker installed on your machine you can build the Docker image with the following command (make sure to pass the access token during the image build):
+
+```bash
+
+docker build -t addImageTag . --build-arg REACT_APP_GRAPHQL_ACCESS_TOKEN=YOUR_ACCESS_TOKEN
+
+```
+
+Then run the image:
+
+```
+
+docker run  -p 3000:3000 addImageTag
+
+```
+
+The image will run the app in dev mode on port 3000.
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -163,6 +186,21 @@ export const SectionContainer = styled.div`
 		theme.spacing(24, 'auto')}; // returns 1.5rem auto
 `;
 ```
+
+## To Do
+
+### Pagination
+
+Currently the app list only the first 20 results. We need to add pagination to allow the user to browse the full list of results
+
+### Test
+
+There are some unit test but no integration and end to end test.
+
+### Authentication 
+
+Currently the access token is hardcoded and will end up in the JavaScript bundle. If we want to make the app public we need to add authentication step for the user. We can use Auth0 or Firebase Auth or some other auth service that will allow the user to authenticate with their GitHub Account.
+ 
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
